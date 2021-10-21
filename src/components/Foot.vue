@@ -36,3 +36,11 @@
     }
   }
 </script>
+
+<style scoped>
+footer.page-footer .footer-copyright {
+ position: fixed;
+ bottom: 0;
+ width: 100%;
+z-index:9999999;}
+</style>
