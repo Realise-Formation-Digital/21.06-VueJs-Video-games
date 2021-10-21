@@ -3,12 +3,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 //Pages
-import Home from "../pages/Home";
-import Contact from "../pages/Contact";
+import home from "../pages/home.vue";
+import contact from "../pages/contact.vue";
+import result from "../pages/result.vue";
+import about from "../pages/about.vue";
 
 const routes = [
-    { path: '/', component: Home },
-    { path: '/contact', component: Contact }
+    { path: '/', component: home },
+    { path: '/contact', component: contact },
+    { path: '/about', component: about },
+    { path: '/result', component: result }
 ]
 
 const router = new VueRouter({
