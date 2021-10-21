@@ -9,7 +9,7 @@
       { text: 'Bienvenue' },
       { text: 'Resultat' },
       { text: 'Contact' },
-      { text: 'A propos', disabled: true }]"
+      { text: 'A propos' }]"
   />
 </template>
 
