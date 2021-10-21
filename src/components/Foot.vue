@@ -17,7 +17,7 @@
     </mdb-container>
     <div class="footer-copyright text-center py-3">
       <mdb-container fluid>
-        &copy; 2020 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+        &copy; Antoine - Lionel - David: <a href="ADL Gaming"> ADL Gaming 2021 </a>
       </mdb-container>
     </div>
   </mdb-footer>
