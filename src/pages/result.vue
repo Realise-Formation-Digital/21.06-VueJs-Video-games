@@ -1,7 +1,9 @@
 <template>
   <div>
       <h1>Resultat</h1>
-      <card description="test" genre="test" thumbnail="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" title="test"/>
+      <div v-for="(jv, index) in jvs" :key="index">
+        <card :description="jv.short_description" :genre="jv.genre" :thumbnail="jv.thumbnail" :title="jv.title"/>
+      </div>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
     },
     data() {
       return {
-        jv : []
+        jvs : []
       }
     },
     mounted(){
@@ -23,9 +25,9 @@ export default {
     },
     methods : {
       async getVg() {
-        const temp = await axios.get("https://www.freetogame.com/api/games");
-        this.jv = temp;
-        console.log(this.jv);
+        const temp = await axios.get("http://localhost:3000/jv");
+        this.jvs = temp.data;
+        console.log(this.jvs[1]);
       }
     }
 }

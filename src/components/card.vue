@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card no-body class="overflow-hidden" style="max-width: 540px">
+    <b-card no-body class="overflow-hidden" style="max-width: 1400px">
       <b-row no-gutters>
         <b-col md="6">
           <b-card-img
