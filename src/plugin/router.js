@@ -9,7 +9,7 @@ import result from "../pages/result.vue";
 import about from "../pages/about.vue";
 
 const routes = [
-    { path: '/', component: home },
+    { path: '/home', component: home },
     { path: '/contact', component: contact },
     { path: '/about', component: about },
     { path: '/result', component: result }
