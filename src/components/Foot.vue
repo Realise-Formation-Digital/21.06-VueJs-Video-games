@@ -37,6 +37,8 @@
   }
 </script>
 
+
+//Style for Footer
 <style scoped>
 footer.page-footer .footer-copyright {
  position: fixed;

@@ -19,6 +19,8 @@
     name: 'Pills',
     components: {
       mdbTabs
+
+
     }
   }
 </script>
