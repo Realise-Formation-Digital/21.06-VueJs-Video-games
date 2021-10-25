@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="d-flex align-items-start bg-light mb-3">
+    <div class="d-flex align-items-start bg-light mb-3"> 
       <div class="col">
         <img src="../assets/doom.jpg" class="img-fluid" alt="Sample" />
       </div>
-            <div class="col">
+        <div class="col">
         Face à tout le mal que l'enfer peut enfanter, toute la vilenie que
         l'humanité peut produire, nous n'enverrons contre eux, qu'ADL Gaming.
         ADL Gaming s'est construite sur des valeurs fortes : passion,
