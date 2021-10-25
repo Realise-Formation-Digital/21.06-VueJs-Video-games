@@ -1,26 +1,41 @@
 <template>
-  <mdb-tabs
-    :active="0"
-    pills
-    fill
-    justify
-    class="mb-5"
-    :links="[
-      { text: 'Bienvenue' },
-      { text: 'Resultat' },
-      { text: 'Contact' },
-      { text: 'A propos' }]"
-  />
+  <mdb-navbar expand="large" dark color="indigo">
+    <mdb-navbar-brand href="#">
+      Navbar
+    </mdb-navbar-brand>
+    <mdb-navbar-toggler>
+      <mdb-navbar-nav right>
+        <mdb-nav-item to="/about">About</mdb-nav-item>
+        <mdb-nav-item to="/contact">Contact</mdb-nav-item>
+        <mdb-nav-item to="/home">Home</mdb-nav-item>
+        <mdb-nav-item to="/result">Result</mdb-nav-item>
+        <mdb-dropdown tag="li" class="nav-item">
+          <mdb-dropdown-toggle tag="a" navLink color="indigo" slot="toggle" waves-fixed>Dropdown</mdb-dropdown-toggle>
+          <mdb-dropdown-menu>
+            <mdb-dropdown-item>Action</mdb-dropdown-item>
+            <mdb-dropdown-item>Another action</mdb-dropdown-item>
+            <mdb-dropdown-item>Something else here</mdb-dropdown-item>
+          </mdb-dropdown-menu>
+        </mdb-dropdown>
+      </mdb-navbar-nav>
+    </mdb-navbar-toggler>
+  </mdb-navbar>
 </template>
 
 <script>
-  import { mdbTabs } from 'mdbvue';
+  import { mdbDropdown, mdbDropdownToggle, mdbDropdownMenu, mdbDropdownItem, mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem } from 'mdbvue';
   export default {
     name: 'Pills',
     components: {
-      mdbTabs
-
-
+      mdbNavbar,
+      mdbNavbarBrand,
+      mdbNavbarToggler,
+      mdbNavbarNav,
+      mdbNavItem,
+      mdbDropdown,
+      mdbDropdownToggle,
+      mdbDropdownMenu,
+      mdbDropdownItem
     }
   }
 </script>
