@@ -5,13 +5,13 @@
         <router-view></router-view>
       </div>
     <Foot/>
+   
   </div>
 </template>
 
 <script>
 
 import Nav from "./components/Nav";
-
 import Foot from "./components/Foot";
 
 export default {
