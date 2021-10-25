@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="cardClick()">
     <b-card no-body class="overflow-hidden" style="max-width: 1400px">
       <b-row no-gutters>
         <b-col md="6">
@@ -46,7 +46,18 @@ export default {
       default: "",
       required: true,
     },
+    id : {
+      type : Number,
+      default : 0,
+      required : true
+    }
   },
+  methods : {
+    cardClick() {
+      console.log('allo');
+      this.$emit("clicked", this.id);
+    }
+  }
 };
 </script>
 
