@@ -1,6 +1,8 @@
 <template>
-  <div>Bienvenue</div>
+  <div>test</div>
+  
 </template>
+
 
 <script>
 
