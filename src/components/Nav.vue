@@ -1,29 +1,21 @@
 <template>
   <mdb-navbar expand="large" dark color="indigo">
     <mdb-navbar-brand href="#">
-      Navbar
+      ADL Gaming
     </mdb-navbar-brand>
     <mdb-navbar-toggler>
       <mdb-navbar-nav right>
-        <mdb-nav-item to="/about">About</mdb-nav-item>
-        <mdb-nav-item to="/contact">Contact</mdb-nav-item>
         <mdb-nav-item to="/home">Home</mdb-nav-item>
         <mdb-nav-item to="/result">Result</mdb-nav-item>
-        <mdb-dropdown tag="li" class="nav-item">
-          <mdb-dropdown-toggle tag="a" navLink color="indigo" slot="toggle" waves-fixed>Dropdown</mdb-dropdown-toggle>
-          <mdb-dropdown-menu>
-            <mdb-dropdown-item>Action</mdb-dropdown-item>
-            <mdb-dropdown-item>Another action</mdb-dropdown-item>
-            <mdb-dropdown-item>Something else here</mdb-dropdown-item>
-          </mdb-dropdown-menu>
-        </mdb-dropdown>
+        <mdb-nav-item to="/contact">Contact</mdb-nav-item>
+        <mdb-nav-item to="/about">About</mdb-nav-item>
       </mdb-navbar-nav>
     </mdb-navbar-toggler>
   </mdb-navbar>
 </template>
 
 <script>
-  import { mdbDropdown, mdbDropdownToggle, mdbDropdownMenu, mdbDropdownItem, mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem } from 'mdbvue';
+  import {  mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem } from 'mdbvue';
   export default {
     name: 'Pills',
     components: {
@@ -32,10 +24,6 @@
       mdbNavbarToggler,
       mdbNavbarNav,
       mdbNavItem,
-      mdbDropdown,
-      mdbDropdownToggle,
-      mdbDropdownMenu,
-      mdbDropdownItem
     }
   }
 </script>
