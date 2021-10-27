@@ -1,4 +1,5 @@
 <template>
+  <!-- Header with button David-->
   <mdb-navbar expand="large" dark color="indigo">
     <mdb-navbar-brand href="#">
       ADL Gaming
@@ -14,6 +15,7 @@
   </mdb-navbar>
 </template>
 
+<!-- Script components David-->
 <script>
   import {  mdbNavbar, mdbNavbarBrand, mdbNavbarToggler, mdbNavbarNav, mdbNavItem } from 'mdbvue';
   export default {
