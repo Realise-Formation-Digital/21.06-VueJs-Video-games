@@ -2,7 +2,7 @@
 <div>
   <h1>Bienvenue</h1>
  <Carousel
- :imgs="listImg.slice(40,60)"/>
+ :imgs="listImg.slice(0, 5)"/>
  </div>
 </template>
 
@@ -38,12 +38,11 @@ export default {
       };
       const temp = await axios.request(options);
       this.jvs = temp.data;
-      console.log(this.jvs);
 
       this.listImg = this.jvs.map((listunite) => {
         return listunite.thumbnail;
       });
-      console.log(this.listImg);
+      this.listImg.sort(() => 0.5 - Math.random());
     },
   },
 };

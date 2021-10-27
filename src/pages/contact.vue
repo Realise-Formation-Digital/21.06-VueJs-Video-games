@@ -77,10 +77,6 @@ export default {
     async onSubmit(event) {
       this.showOverlay = true, 
       event.preventDefault();
-      console.log(this.form);
-      console.log(this.form.email);
-      console.log(this.form.name);
-      console.log(this.form.adress);
 
       await axios.post("http://localhost:3000/users", {
         name: this.form.name,
@@ -94,7 +90,6 @@ export default {
       // Reset our form values
       this.form.email = "";
       this.form.name = "";
-
       this.form.adress = "";
 
       // Trick to reset/clear native browser form validation state
