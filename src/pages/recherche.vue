@@ -1,29 +1,27 @@
-<template>
-<div>
-  <h1>Bienvenue</h1>
- <Carousel
- :imgs="listImg.slice(40,60)"/>
- </div>
+ <template>
+  <div>
+    <br />
+    <h1>Recherche</h1>
+    <div id="recherche">
+      <input type="text" v-model="search" />
+      <b-btn @click="filterJv()">search</b-btn>
+    </div>
+  </div>
 </template>
 
 <script>
-
-import Carousel from "../components/carousel.vue"
 const axios = require("axios").default;
-
 export default {
-  name: "home",
-  components: {
-    Carousel,
-  },
+  name: "recherche",
   data() {
     return {
       jvs: [],
-      listImg:[]
+      search : ""
     };
   },
   mounted() {
     this.getVg();
+   
   },
   methods: {
     async getVg() {
@@ -39,16 +37,18 @@ export default {
       const temp = await axios.request(options);
       this.jvs = temp.data;
       console.log(this.jvs);
-
-      this.listImg = this.jvs.map((listunite) => {
-        return listunite.thumbnail;
-      });
-      console.log(this.listImg);
     },
+    filterJv() {
+        const s = this.search
+        const filter = this.jvs.filter(function(u){
+            return u.title.includes(s)
+        })
+        console.log(filter)
+    }
   },
 };
-
 </script>
 
-<style scoped>
+<style>
 </style>
+
