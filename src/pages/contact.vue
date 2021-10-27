@@ -1,9 +1,10 @@
 
 <template>
-  <div>
+  <div class = "cent">
     <h1>Contact</h1>
     <div>
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-overlay :show="showOverlay" rounded="sm"> 
+      <b-form @submit="onSubmit" @reset="onReset">
         <b-form-group id="input-name" label="Your Name:" label-for="input-2">
           <b-form-input
             id="name"
@@ -37,14 +38,27 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-button type="submit" variant="primary">Submit</b-button>
+        <div>
+          
+
+          <b-button
+            type="submit"
+            variant="primary"
+            class="mt-3"
+            @click="show = !show"
+            >submit</b-button
+          >
+        </div>
+
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
+      </b-overlay>
     </div>
   </div>
 </template>
 
 <script>
+
 const axios = require("axios").default;
 
 export default {
@@ -55,24 +69,25 @@ export default {
         name: "",
         adress: "",
       },
-
+      showOverlay: false,
       show: true,
     };
   },
   methods: {
     async onSubmit(event) {
+      this.showOverlay = true, 
       event.preventDefault();
       console.log(this.form);
       console.log(this.form.email);
       console.log(this.form.name);
       console.log(this.form.adress);
 
-      await axios.post("http://localhost:3000/users",
-        {
-          name: this.form.name,
-          adress:this.form.adress,
-          email:this.form.email
-        })
+      await axios.post("http://localhost:3000/users", {
+        name: this.form.name,
+        adress: this.form.adress,
+        email: this.form.email,
+      });
+      this.showOverlay= false;
     },
     onReset(event) {
       event.preventDefault();
@@ -91,3 +106,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.cent {
+  text-align:center;
+}
+
+</style>
