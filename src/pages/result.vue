@@ -16,7 +16,7 @@
     <h1>Resultat</h1>
 
     <!-- If just loaded and waiting for API -->
-    <div v-if="jvs.length === 0">loading...</div>
+    <div v-if="jvs.length === 0"><b-spinner type="grow"></b-spinner><b-spinner type="grow"></b-spinner><b-spinner type="grow"></b-spinner></div>
     
     <!-- Display search results (Only if search array is filled) -->
     <div v-else-if="jvsSearch.length !== 0">
