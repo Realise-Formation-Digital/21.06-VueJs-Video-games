@@ -1,5 +1,5 @@
 <template>
-<!-- Information of web site David-->
+<!-- Information of web site. David-->
   <div>
     <div class="d-flex align-items-start bg-light mb-3"> 
       <div class="col">
