@@ -2,24 +2,38 @@
   <div>
     <br />
     <h1>Recherche</h1>
+
+    <!-- Seach input div -->
     <div id="recherche">
-      <input type="text" v-model="search" />
-      <b-btn @click="filterJv()">search</b-btn>
+      <input
+        type="text"
+        v-model="search"
+        @keyup="filterJv"
+        v-on:keyup.delete="filterJv"
+      />
     </div>
 
     <h1>Resultat</h1>
-    <div v-for="(jv, index) in jvsSearch" :key="index">
-      <card
-        :description="jv.short_description"
-        :genre="jv.genre"
-        :thumbnail="jv.thumbnail"
-        :title="jv.title"
-        :id="jv.id"
-        @clicked="childClicked"
-      />
+
+    <!-- Display search results (Only if search array is filled) -->
+    <div v-if="jvsSearch.length !== 0">
+      <div v-for="(jv, index) in jvsSearch" :key="index">
+        <card
+          :description="jv.short_description"
+          :genre="jv.genre"
+          :thumbnail="jv.thumbnail"
+          :title="jv.title"
+          :id="jv.id"
+          @clicked="childClicked"
+        />
+      </div>
     </div>
+
+    <!-- Else no result message -->
+    <div v-else>Aucun resultat!</div>
+    
+    <!-- The modal -->
     <div>
-      <!-- The modal -->
       <b-modal id="my-modal"
         ><card-detail
           :title="singleJv && singleJv.title"
@@ -48,22 +62,22 @@ const axios = require("axios").default;
 export default {
   name: "recherche",
   components: {
-    card, cardDetail
+    card,
+    cardDetail,
   },
   data() {
     return {
-      jvs: [],
-      search: "",
-      id : 1,
-      jvsSearch: [],
-      singleJv : null
+      jvs: [],        //All games array
+      search: "",     //Seach box content
+      id: 1,          //Index for single videogame display
+      jvsSearch: [],  //Search result array
+      singleJv: null, //Single videogame content
     };
   },
   mounted() {
-    this.getVg();
+    this.getVg();  //At mount, get all videogames
   },
   methods: {
-
     //Get all videogames and store it in jvs array
     async getVg() {
       //API settings, method, URL, keys
@@ -80,27 +94,20 @@ export default {
       const temp = await axios.request(options);
       //Store result in jvs array
       this.jvs = temp.data;
+      this.jvsSearch = this.jvs;
     },
     filterJv() {
       //Get search value from text box
       const s = this.search;
+      this.jvsSearch = [];
 
       //Look for results in array with filter parameter
       const filter = this.jvs.filter(function (u) {
         return u.title.includes(s);
       });
-
-
-      //If filter result is not empty
-      if (filter.length !== 0){ 
-        //Add filtered search to filtered array
-        this.jvsSearch = filter;
-      } else {
-        //Else error
-        alert('Aucun jeu trouvé avec ce critère de recherche!');
-      }
+      //Put search result in searched videogames array
+      this.jvsSearch = filter;
     },
-
 
     //When child is clicked, get id from child back, and use said ID to display single game
     async childClicked(val) {
@@ -118,7 +125,7 @@ export default {
       //Do request
       let temp = await axios.request(options);
       //Show modal
-      this.$bvModal.show('my-modal')
+      this.$bvModal.show("my-modal");
       //Assign data from single videogame to singeJv
       this.singleJv = temp.data;
     },

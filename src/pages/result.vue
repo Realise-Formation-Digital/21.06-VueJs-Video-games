@@ -1,6 +1,8 @@
 <template>
   <div>
     <h1>Resultat</h1>
+
+    <!-- Display all games loop -->
     <div v-for="(jv, index) in jvs" :key="index">
       <card
         :description="jv.short_description"
@@ -44,9 +46,9 @@ export default {
   },
   data() {
     return {
-      jvs: [], //Json array with all the games' info
-      id: 1, //Game index for single game display
-      singleJv : null
+      jvs: [],         //Json array with all the games' info
+      id: 1,           //Game index for single game display
+      singleJv : null  //Single videogame display content
     };
   },
 
@@ -78,7 +80,7 @@ export default {
     //When child is clicked, get id from child back, and use said ID to display single game
     async childClicked(val) {
       let options = {
-        //API settings, keys, method, request params
+        //API settings, keys, method, request params (ID)
         method: "GET",
         url: "https://free-to-play-games-database.p.rapidapi.com/api/game",
         params: { id: val },
@@ -88,8 +90,12 @@ export default {
             "3b6fde0462msh8f59fe31774848ap1a098cjsn4821d8bafdfb",
         },
       };
+
+      //Do request
       let temp = await axios.request(options);
+      //Show modal
       this.$bvModal.show('my-modal')
+      //Get request result into singleJv variable
       this.singleJv = temp.data;
     },
   },

@@ -74,13 +74,15 @@ export default {
     };
   },
   methods: {
+    //When submit button is clicked
     async onSubmit(event) {
       this.showOverlay = true, 
       event.preventDefault();
 
+      //Post into json server
       await axios.post("http://localhost:3000/users", {
         name: this.form.name,
-        adress: this.form.adress,
+        adress: this.form.adress,     //Content
         email: this.form.email,
       });
       this.showOverlay= false;
