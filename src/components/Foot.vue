@@ -1,5 +1,5 @@
 <template>
-  <!-- Footer -->
+  <!-- Footer with social David-->
   <mdb-footer color="indigo" class="font-small pt-0">
     <mdb-container>
       <mdb-row>
@@ -15,15 +15,18 @@
         </mdb-col>
       </mdb-row>
     </mdb-container>
+    <!-- Footer with name team David-->
     <div class="footer-copyright text-center py-3">
       <mdb-container fluid>
         &copy; Antoine - Lionel - David: <a href="ADL Gaming"> ADL Gaming 2021 </a>
       </mdb-container>
     </div>
   </mdb-footer>
-  <!-- Footer -->
+  <!-- Footer David-->
 </template>
 
+
+<!-- script components David-->
 <script>
   import { mdbFooter, mdbContainer, mdbRow, mdbCol } from 'mdbvue';
   export default {
@@ -37,7 +40,7 @@
   }
 </script>
 
-
+<!-- CSS David-->
 //Style for Footer
 <style scoped>
 footer.page-footer .footer-copyright {

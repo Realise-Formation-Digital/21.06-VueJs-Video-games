@@ -10,7 +10,7 @@ import about from "../pages/about.vue";
 import recherche from "../pages/recherche.vue";
 
 const routes = [
-    { path: '/home', component: home },
+    { path: '/', component: home },
     { path: '/contact', component: contact },
     { path: '/about', component: about },
     { path: '/result', component: result },
