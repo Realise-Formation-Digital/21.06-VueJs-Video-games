@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <Nav/>
-      <b-container>
+      <div class="container">
         <router-view></router-view>
-      </b-container>
+      </div>
     <Foot/>
+   
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
   name: 'App',
   components: {
     Foot,
-    Nav
+    Nav,
   }
 }
 </script>
