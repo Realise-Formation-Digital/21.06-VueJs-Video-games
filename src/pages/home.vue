@@ -6,7 +6,6 @@
  </div>
 </template>
 
-
 <script>
 
 import Carousel from "../components/carousel.vue"
@@ -48,6 +47,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>

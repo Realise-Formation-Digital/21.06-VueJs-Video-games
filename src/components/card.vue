@@ -53,8 +53,8 @@ export default {
     }
   },
   methods : {
+    //Emits this child id to parent for more detailed display
     cardClick() {
-      console.log('allo');
       this.$emit("clicked", this.id);
     }
   }
